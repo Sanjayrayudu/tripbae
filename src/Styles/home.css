@@ -1,0 +1,867 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    padding: 10px;
+    width: 1300px;
+    margin-left: 50px;
+
+}
+
+/* CSS for the heading */
+.heading {
+    font-size: 24px;
+    font-weight: bold;
+
+}
+
+.fa-star {
+    color: rgb(58,80,107)
+}
+
+/* CSS for the subheading */
+.subheading {
+    font-size: 16px;
+    
+}
+
+/* CSS for the buttons */
+.button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+
+}
+
+.bi-whatsapp {
+    color: white;
+}
+
+/* Additional styling for the second button */
+.button2 {
+    background-color: #008CBA;
+    margin-left: 10px;
+}
+
+/* CSS for the container holding the boxes */
+
+.containerf {
+    display: flex;
+    /* Use flexbox to place items in a row */
+    justify-content: space-between;
+    /* Space items evenly in the container */
+    max-width: 1400px;
+    /* Set a maximum width for the container (adjust as needed) */
+    margin-top: 20px;
+    /* Center the container on the page */
+    margin-right: 50px;
+    margin-left: 150px;
+    margin-bottom: 10px;
+}
+
+/* CSS for the boxes */
+.box1 {
+   width: 616px;
+    /* Set the width of each box */
+    height: 500px;
+    /* Set the height of each box */
+    margin-left: 0px;
+}
+
+/* CSS to divide the second box */
+.box-2 {
+    display: flex;
+    width: 500px;
+    /* Use flexbox to place items in a row */
+}
+
+.box1 img {
+    width: 700px;
+    height: 490px;
+    margin-right: 20px;
+}
+
+.box-inside-part img {
+    width: 240px;
+    height: 240px;
+}
+
+/* CSS for the two parts within the second box */
+.box-2-part {
+    flex: 1;
+    /* Allow each part to grow and take equal space */
+
+    display: column;
+    /* Use flexbox to place items in a row */
+    justify-content: space-between;
+    /* Space items evenly in each part */
+    gap: 30px;
+    ;
+}
+
+/* CSS for the boxes inside each part */
+.box-inside-part {
+    width: 250px;
+    /* Set the width of each inner box */
+    height: 250px;
+    /* Set the height of each inner box */
+
+    /* Add a border for visual distinction (optional) */
+}
+
+.containers {
+    display: flex;
+    flex-wrap: wrap;
+    
+    margin-left: 100px;
+    margin-right: 36px;
+}
+
+.boxs {
+    height: auto;
+    box-sizing: border-box;
+    padding: 20px;
+
+    margin-bottom: 40px;
+}
+
+.boxs1 {
+    flex-basis: 75%;
+}
+
+.boxs2 {
+    flex-basis: 25%;
+}
+
+.containerpt-fluid {
+    display: flex;
+    justify-content: space-between;
+    max-width: auto;
+    margin-top: -6px;
+    height: 146px;
+}
+
+/* CSS for the boxes */
+.boxpt {
+    width: 100px;
+    height: 140px;
+    /* Increased height to accommodate icons and names */
+    background-color: #fff;
+    color: rgb(58,80,107);
+    padding: 10px;
+    /* Add some padding for spacing */
+    text-align: center;
+    /* Center icons and text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+
+/* CSS for the icon and name */
+.iconpt {
+    font-size: 36px;
+    margin-bottom: 10px;
+    /* Add some spacing between icon and name */
+}
+
+.iconpt-name {
+    font-size: 16px;
+}
+
+.containerpt1 {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+/* CSS for the boxes */
+.dmddd{
+    margin-top: -362px;
+}
+
+/* CSS for the icon and name */
+
+
+/* CSS for the content and read more button */
+.content {
+    flex: 1;
+    display: none;
+    /* Hide the content by default */
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.read-more-btn {
+    background-color: #fff;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-left: 703px;
+    margin-top: 10px;
+}
+
+.matter {
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.hh {
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(55, 54, 54);
+    font-weight: bolder;
+    margin-top: 20px;
+    margin-top: 35px;
+}
+
+.a {
+    padding-left: 20px;
+    color: #666;
+    font-size: 14px;
+}
+
+.b {
+ 
+    font-size: 24px;
+    padding-left: 20px;
+    font-weight: bold;
+    color: rgb(111,255,233);
+}
+
+.d {
+    padding-left: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+ 
+
+.btns{
+    background-color: rgb(58,80,107);
+    color: black;
+    margin-bottom:20px
+}
+
+.btn-outline-secondary {
+    --bs-btn-color: #6c757d;
+    --bs-btn-border-color: #6c757d;
+    --bs-btn-hover-color: black;
+    --bs-btn-hover-bg: #6c757d;
+    --bs-btn-hover-border-color: #6c757d;
+    --bs-btn-focus-shadow-rgb: 108,117,125;
+    --bs-btn-active-color: black;
+    --bs-btn-active-bg: #6c757d;
+    --bs-btn-active-border-color: #6c757d;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #6c757d;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #6c757d;
+    --bs-gradient: none;
+}
+
+.btn-outline-info:hover {
+    color: black;
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+
+.btn-outline-info{
+    width: 200px;
+    margin-left: 20px;
+    margin-right: 10px;
+    background-color: rgb(111,255,233);
+ 
+    color: white;
+    
+    border: none;
+    border-radius: 5%;
+    font-weight: 800;
+    margin-top: -8px;
+    height: 50px;
+}
+
+.boxbook {
+    border: #666 2px solid;
+    border-radius: 5%;
+    padding: 0px;
+    width: 242px;
+    height: 228px;
+    margin-top: 20px;
+}
+
+.boxbook2 {
+    border: #666 2px solid;
+    border-radius: 5%;
+    padding: 20px;
+    margin-top: 20px;
+    width: 242px;
+}
+
+.boxbook2 p {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.boxbook2 h4 {
+    font-size: 22px;
+    font-weight: 800;
+    padding-bottom: 10px;
+}
+
+.number {
+    font-size: 22px;
+    align-items: end;
+}
+
+.phone {
+    margin-top: 305px;
+    margin-left: 64px;
+    width: 500px;
+    height: 330px;
+}
+
+.phone img {
+    width: 500px;
+    height: 300px;
+}
+
+.containerpt2 {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin-left: 50px;
+    margin-top: 20px;
+
+
+}
+
+.effrew{
+   margin-top: -338px; 
+}
+
+.hf {
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(55, 54, 54);
+    font-weight: bolder;
+    margin-left: 63px;
+    margin-top: 40px;
+}
+
+.hfsd{
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(55, 54, 54);
+    font-weight: bolder;
+    margin-left: 63px;
+    margin-top: -35px;  
+}
+.hfs {
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(55, 54, 54);
+    font-weight: bolder;
+    margin-left: 75px;
+    margin-top: 20px;
+   
+}
+.hfss {
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(55, 54, 54);
+    font-weight: bolder;
+    margin-left: 62px;
+    margin-top: 45px;
+
+}
+
+.read-more-btn1 {
+    background-color: #fff;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    padding-left: 800px;
+
+}
+.containers1{
+    margin-left: 65px;
+    width:800px ;
+ 
+        margin-right: 38px;
+}
+.containers11{
+    margin-left: 65px;
+    width:800px ;
+ margin-top : 30px;
+        margin-right: 38px;
+}
+
+
+.myCustomPanel {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-left: 0;
+    margin-bottom: 20px;
+    
+}
+
+.myCustomPanel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+    background-color:#fff;
+}
+
+.myCustomPanel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: inherit;
+}
+
+.myCustomPanel-body {
+    padding: 15px;
+}
+.containerpt4 {
+    display: flex;
+    width: 1000px;
+    margin: 20px;
+    margin-left: 56px;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 10px;
+}
+
+.left-half,
+.right-half {
+    flex: 1;
+    padding: 10px;
+    border: none;
+
+}
+
+
+.points ul {
+    list-style: none;
+    padding: 0;
+}
+
+.points li {
+    margin-bottom: -10px;
+}
+
+.fa-check,
+.fa-times {
+    margin-right: 5px;
+}
+
+.fa-check {
+    color: green;
+}
+
+.fa-times {
+    color: red;
+}
+
+.button-container {
+    display: flex;
+    justify-content: baseline;
+    margin-top: 8px;
+    margin-left: 48px;
+}
+
+.buttons {
+    padding: -3px 15px;
+    margin: 1px;
+    font-size: 16px;
+    background-color: rgb(181, 175, 175);
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 19px;
+}
+
+.buttons:hover {
+    background-color: grey;
+}
+.containerss{
+    margin-left: 100px;
+    margin-top: 40px;
+    width: 800px;
+}
+.mainPanel{
+    gap:20px;
+}
+.panel{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-left: 30px;
+}
+
+.panel-heading{
+   
+    background-color: #fff;
+
+}
+.panel-title{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+}
+.panel-body{
+    margin-bottom: 20px;
+
+}
+
+.btn-outline-secondary{
+    width: 200px;
+    margin-left: 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5%;
+    font-weight: 800;
+    background-color:rgb(58,80,107);
+    margin-top: 10px;
+    height: 50px;
+}
+
+.btn{
+    background-color: rgb(58,80,107);
+    color: white;
+    margin-bottom:20px
+}
+.btn-primary{
+    background-color: rgb(58,80,107);
+    --bs-btn-color: #fff;
+    --bs-btn-bg: rgb(58,80,107);
+    --bs-btn-border-color: rgb(58,80,107);
+    --bs-btn-hover-color: black;
+    --bs-btn-hover-bg: rgb(58,80,107);
+    --bs-btn-hover-border-color: rgb(58,80,107);
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: rgb(58,80,107);
+    --bs-btn-active-border-color: rgb(58,80,107);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: rgb(58,80,107);
+    --bs-btn-disabled-border-color: rgb(58,80,107);
+}
+
+
+.cards-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin-top: 3px;
+    margin-right: 100px;
+    margin-left: 36px;
+    margin-bottom: 100px;
+    width: 1100px;
+}
+
+.cards {
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin: 10px;
+    text-align: baseline;
+    width:200px;
+    height: 520px;
+    
+}
+
+.cards img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+.cards-content {
+    margin-top: 10px;
+    padding: 10px;
+}
+.jhfhs{
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+.timer-container {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.timer-container i {
+    margin-right: 10px;
+}
+.date{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: #fff;
+       
+    }
+    .contentpt4{
+        font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+        padding :10px;
+        font-size: large;
+        color: #333;
+        font-weight: bold;
+        margin-left: -10px;
+    }
+    .cards i{
+        color:#fff;
+    }
+    .bottom{
+        padding-top: 100px;
+    }
+    .bottom div{
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 20px;
+        font-weight: 300;
+    }
+    .cardbot{
+        border:solid 2px #fff;
+        background-color: rgb(111,255,233);
+       margin-left: 150px;
+       width: 50px;
+       height: 30px;
+       padding-bottom:-50px ;
+    }
+   
+    .side{
+        font-size: 35px;
+        font-weight: 700;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color:#333;
+        padding-left: 30px;
+        margin-left: 33px;
+        margin-top: 53px;
+    }  
+    .sidessssss{
+        font-size: 35px;
+        font-weight: 700;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color:#333;
+        padding-left: 30px;
+        margin-left: 33px;
+        margin-top: -10px;
+    }  
+    
+
+    .sidess{
+        font-size: 35px;
+        font-weight: 700;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color:#333;
+        padding-left: 30px;
+        margin-left: 33px;
+        margin-top: -10px;
+    }
+    .boxt-container {
+        margin-top: -24px;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        margin-left: 120px;
+        margin-right:100px ;
+        gap: 30px;
+        width: 1100px;
+    }
+    
+    .boxt {
+        flex: 1;
+       
+        border-radius: 5px;
+        padding: 20px;
+        margin: 10px;
+        text-align: center;
+        margin-left: -30px;
+    }
+    
+    .boxt i {
+        margin-bottom: 10px;
+        font-size: 24px;
+    }
+    .rate{
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 700;
+        color: 	
+        rgb(91,192,190);
+    }
+    
+    .stars {
+        margin-top: 20px;
+        color: #ecec0b;
+        margin-bottom: 10px;
+    }
+    .boxt img{
+        width:50px;
+        height: 50px;
+        border-radius: 50%;
+        border:solid 1px #333;
+    }
+   
+    .boxw {
+        width: 1037px;
+        padding: 20px;
+        border: 1px solid #000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 67px;
+        margin-bottom: 30px;
+        border-radius: 10px;
+        margin-top: -50px;
+        
+    }
+    .headers {
+        text-align: left;
+        margin-right: 10px;
+    }
+    .input{
+        width:200px;
+    }
+    .input-field {
+        margin-right: 10px;
+        width:100px;
+    }
+    .input-field input {
+        width: 150px;
+    }
+    .subscribe{
+        background-color: rgb(58,80,107);
+        color: #fff;
+        width: 150px;
+        height: 50px;
+        border-radius: 10%;
+        font-size: 17px;
+        font-weight: 700;
+    }
+    .boxse {
+        width: 800px;
+        height: 100px;
+        margin-top: 40px;
+        border: 1px solid black;
+        margin: 10px;
+        padding: 10px;
+        display: block;
+        text-align: left;
+        position: relative;
+        margin-left: 66px;
+        margin-bottom: 30px;
+        padding-left: 30px;
+        margin-top: 25px;
+        border-radius: 10px;
+      }
+  
+      .boxse h1, .boxse h2 {
+        margin: 0;
+        padding: 0;
+      }
+  
+      .boxse p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        margin-top: -6px;
+      }
+  
+      .boxse .row button {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        display: none;
+        width:130px;
+        height: 50px;
+        background-color: rgb(58,80,107);
+        color: #fff;
+        font-weight: 600;
+        border-radius: 5%;
+        font-size: 16px;
+      }
+  
+      .active {
+        background-color: #d3d3d3;
+      }
+  
+      .active .row button {
+        margin-bottom: 15px;
+        display: inline-block;
+      }
+      .boxse p{
+        padding-left: 40px;
+      }
+      .boxse  p span {
+        font-size: 20px;
+        font-weight: 800;
+        font-display:inherit;
+      }
+      .boxse  p span s{
+        font-size: 15px;
+  
+      }
+  
+      .rectangle {
+        width: 66vw;
+        height: 9vh;
+        background-color: rgb(111,255,233);
+        border: 1px solid gray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: -57px;
+    }
+      
+      .content {
+        display: flex;
+        align-items: center;
+      }
+      
+      .sections {
+        display: flex;
+        gap: 20px;
+      }
+      
+      .section {
+        padding: 10px 20px;
+        background-color: white;
+        border: 1px solid gray;
+      }
+      
