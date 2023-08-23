@@ -1,0 +1,39 @@
+/* home.css */
+/* ... Previous styles ... */
+
+.nameBox.fixed-box {
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #f0f0f0;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between; /* Adjust as needed */
+    align-items: center; /* Center vertically */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    z-index: 1; /* Make it appear below the fixed-box */
+}
+
+.nameBox.fixed-box.visible {
+    display: flex;
+}
+/* home.css */
+/* ... Previous styles ... */
+
+.fixed-box.visible {
+    display: flex;
+}
+
+.fixed-box {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #f0f0f0;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between; /* Adjust as needed */
+    align-items: center; /* Center vertically */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    z-index: 1; /* Make it appear below the content */
+}

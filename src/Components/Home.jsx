@@ -1,5 +1,5 @@
 import '../Styles/home.css';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Modal  from 'react-modal';
@@ -7,7 +7,7 @@ import '../Styles/home.css';
 import { FaCalendarAlt } from 'react-icons/fa';
 import { FaUserFriends } from 'react-icons/fa';
 import { FaBed } from 'react-icons/fa';
-import  { useState } from 'react';
+
 import { Link, Element } from 'react-scroll';
 
 const ReadMore = ({ children, maxCharacterCount = 200 }) => {
@@ -60,8 +60,26 @@ const CollapsiblePanel = ({ title, content, isExpanded, onToggle }) => {
 
 
 const Home = () => {
+  const [isScrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+      const onScroll = () => {
+          if (window.scrollY > 60) { // Assuming header height is 60px
+              setScrolled(true);
+          } else {
+              setScrolled(false);
+          }
+      };
+
+      window.addEventListener('scroll', onScroll);
+
+      return () => {
+          window.removeEventListener('scroll', onScroll);
+      };
+  }, []);
   
- 
+  
+  const names = ['Name1', 'Name2', 'Name3', 'Name4', 'Name5', 'Name6'];
   const [isExpanded, setIsExpanded] = useState(false);
   
   const [isContentVisible, setIsContentVisible] = useState(false);
@@ -137,7 +155,11 @@ const Home = () => {
 
 
     return( 
-<div style={{    marginLeft: "35px"}}>
+      <div className="home-container">
+      <div className="header-box">
+          {!isScrolled ? (
+              <>
+                  <div style={{    marginLeft: "35px"}}>
         <div className="header">
         <div className="heading">
             Netravathi Peak Trek,Chikmagalur
@@ -151,6 +173,28 @@ const Home = () => {
             
         </div>
     </div>
+    </div>
+              </>
+          ) : (
+              <>
+                  <div className="nameBox fixed-box">
+        <a href="#overview"><span>Overview</span></a>
+        <a href="#section2"><span>Highlights</span></a>
+        <a href="#section3"><span>Itinerary</span></a>
+        <a href="#section4"><span>Included/Excluded</span></a>
+        <a href="#section5"><span>Prices</span></a>
+        <a href="#section6"><span>Questions</span></a>
+        <a href="#section7"><span>Reviews</span></a>
+        
+        
+          </div>
+              </>
+          )}
+      </div>
+      
+
+   
+
 
     <div className="containerf">
         <div className="box1">
@@ -158,7 +202,7 @@ const Home = () => {
             <img src="./Assets/image7.jpg" alt="Your Image" style={{marginLeft: "-90px"}}/>
         </div>
         <div className="box box-2" style={{marginRight: "66px"}}>
-            <div className="box-2-part" >
+            <div className="box-2-parts" >
                 <div className="box-inside-part">
                     <img src="./Assets/image2.jpg" alt="Your Image"/>
                 </div>
@@ -166,11 +210,11 @@ const Home = () => {
                     <img src="./Assets/image4.jpg" alt="Your Image"/>
                 </div>
             </div>
-            <div className="box-2-part" style={{marginLeft: "-8px"}}>
+            <div className="box-2-partss" >
                 <div className="box-inside-part">
                     <img src="./Assets/image5.jpg" alt="Your Image"/>
                 </div>
-                <div className="box-inside-part">
+                <div className="box-inside-parts">
                     <img src="./Assets/image6.jpg" alt="Your Image"/>
                 </div>
             </div>
@@ -207,109 +251,25 @@ const Home = () => {
                     <i className="fas fa-map-marker-alt iconpt"></i>
                     <div className="iconpt-name">Stay</div>
                 </div>
+                <span id="overview" style={{ paddingTop: "100px",marginTop: "29px" ,    marginBottom: "-605px"}}></span> 
+               
+                   
         </div>
-        <div className="rectangle">
-      <div className="content">
-
-      <Link
-            activeClass="active"
-            to="overview"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={10}
-          >
-             <button style={{marginLeft: "10px" }}>Overview</button>
-          </Link>
-
-          <Link
-            activeClass="active"
-            to="highlights"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={10}
-          >
-            <button style={{marginLeft: "25px"}}>Highlights</button>
-          </Link>
-
-          <Link
-            activeClass="active"
-            to="itinerary"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={10}
-          >
-            <button style={{marginLeft: "25px"}}>Itinerary</button>
-          </Link>
-
-          <Link
-            activeClass="active"
-            to="included/excluded"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={10}
-          >
-             <button style={{marginLeft: "25px"}}>Included/Excluded</button>
-          </Link>
-
-          <Link
-            activeClass="active"
-            to="prices"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={10}
-          >
-                 <button style={{marginLeft: "25px"}}>Prices</button>
-          </Link>
-          <Link
-            activeClass="active"
-            to="questions"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={10}
-          >
-            <button style={{marginLeft: "25px"}}>Questions</button>
-          </Link>
-          <Link
-            activeClass="active"
-            to="reviews"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={10}
-          >
-                <button style={{marginLeft: "25px"}}>Reviews</button>
-          </Link>
-          <Link
-            activeClass="active"
-            to="othertreks"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={10}
-          >
-           <button style={{marginLeft: "25px"}}>Other Treks</button>
-          </Link>
-
+        
+       {/* <div className="nameBox fixed-box">
+        <a href="#overview"><span>Overview</span></a>
+        <a href="#section2"><span>Highlights</span></a>
+        <a href="#section3"><span>Itinerary</span></a>
+        <a href="#section4"><span>Included/Excluded</span></a>
+        <a href="#section5"><span>Prices</span></a>
+        <a href="#section6"><span>Questions</span></a>
+        <a href="#section7"><span>Reviews</span></a>
+        <a href="#section8"><span>OtherTreks</span></a>
+        
+          </div> */}
 
     
-
-    
-    
-
-     
-
-     
-      </div>
-    </div>
-
-    <Element name="overview" >
-    <div className="hh"style={{    marginLeft: "-56px"}}>Overview</div>
+    <div  className="hh"style={{    marginLeft: "-56px"}}>Overview</div>
         <div className="containerpt1" style={{    marginLeft: "-56px"}}>
             <div className="boxpt1">
                 
@@ -332,16 +292,16 @@ const Home = () => {
 </div>
 
 </div> 
-          </Element>
+       
 
       
         </div>
-        <div class="boxss boxs2" style={{marginTop: "4px"}}>
+        <div class="boxss boxs2" style={{marginTop: "1px"}}>
             <div class="boxbook" style={{marginTop: "20px"}}>
             <div class="a" style={{marginTop: "10px"}}>Starting from <s>INR 4,500</s> </div>
             <div class="b">INR 2,050 </div>
             <div class="d">per Adult</div>
-            <button className="btns btn-outline-secondary ff" onClick={handleOpenModal}> Book Now</button>
+            <button className="btns btn-outline-secondary ff" onClick={handleOpenModal} style={{marginTop:"0px"}}> Book Now</button>
             <button class="btns btn-outline-info">Send Enquiry</button>
             </div>
            
@@ -352,14 +312,20 @@ const Home = () => {
                     <div><i class="bi bi-telephone-inbound-fill"></i> +91 9916627799</div>
                 </div>
             </div>
+           
         </div>
       </div>
+      
       <div class="phone">
+      <span id="section2" style={{ paddingTop: "100px",marginTop: "29px" ,    marginBottom: "-605px"}}></span>
       <img src="./Assets/phone.jpg" class= "dmddd" alt="none"/>
+      
+      
       </div>
+      
       <div class ="effrew">
-      <Element name="highlights" >
-      <div class="hf">Highlights</div>
+      
+      <div class="hf" >Highlights</div>
       <div className="containerpt2">
         <div className="boxpt2">
           <div className="matter">
@@ -372,6 +338,7 @@ const Home = () => {
               <br></br>
             </ul>
           </div>
+          <span id="section3"></span>
           <div className="content" style={{ display: isContentVisible ? 'block' : 'none' }}>
                         <ul style={{    marginTop: "-16px"}}>
                             <li>Experience Local Culture at Adi-Shaktyamaka Shri Annapoorneshwari Temple: Enjoy a visit to the revered Adi-Shaktyamaka Shri Annapoorneshwari Temple in Hornadu and gain insights into the local religious practices.</li>
@@ -382,10 +349,10 @@ const Home = () => {
                     <button style={{marginTop: "-15px"}} className="read-more-btn" onClick={toggleContent}>{isContentVisible ? 'Read Less' : 'Read More'}</button>
                 </div>
             </div>
-          </Element>
+         
       
-  <Element name = "itinerary">
-      <div className="hfs">Itinerary</div>
+ 
+      <div className="hfs" >Itinerary</div>
       {isAllExpanded ? (
         <button
           className="btn btn-primary"
@@ -424,7 +391,7 @@ const Home = () => {
           isExpanded={isAllExpanded || isDay2Expanded}
           onToggle={() => setIsDay2Expanded((prevState) => !prevState)}
         />
-
+<span id="section4"></span>
         <CollapsiblePanel
           title="Day 3 -Monday"
           content="Content for day 3"
@@ -433,10 +400,10 @@ const Home = () => {
         />
 
       </div>
-      </Element>
+      
 
-      <Element name = "included/excluded">     
-<div class="hfss">Included/Excluded</div>
+        
+<div class="hfss" >Included/Excluded</div>
   <div class="containerpt4">
     <div class="left-half">
        
@@ -474,42 +441,71 @@ Kodagu district of Karnataka, after Tadiandamol.</li>
             <li><i class="fas fa-times"></i>If compared to the other treks in this region,
 Kumara Parvatha is a little tougher but beautiful.</li>
 <br></br>
-            <li><i class="fas fa-times"></i>The trekking trail runs through the Pushpagiri
+            <li ><i class="fas fa-times" ></i>The trekking trail runs through the Pushpagiri
 Wildlife Sanctuary, and you’ll be getting up close
 and personal with nature during this journey</li>
-<br></br>
+<div id="section5"></div>
+<br ></br>
             
         </ul>
         </div>
     </div>
+</div >
+
+
+
+<div class="hfsd" >Select Options</div>
+
+<div className={`boxse ${selectedTrek === 'trekWithTransfer' ? 'active' : ''}`} id="trekWithTransfer">
+    <input style={{    height: "45px",
+    width: "20px"}}
+        type="radio" 
+        id="trekWithTransferRadio" 
+        name="trekOption" 
+        value="trekWithTransfer" 
+        checked={selectedTrek === 'trekWithTransfer'}
+        onChange={() => selectTrek('trekWithTransfer')}
+    />
+    <label htmlFor="trekWithTransferRadio" style={{marginLeft: "16px"}} >
+        <h4 style={{marginTop: "5px"}}>Netravathi Trek with Transfers</h4>
+        <h5>View details</h5>
+        <p style={{marginLeft: "75px"}}>
+            <span><s>4999</s><br /></span>
+            <span>INR 3499</span>
+        </p>
+    </label>
+    <div className="row" onClick={handleOpenModal}>
+        {selectedTrek === 'trekWithTransfer' && <button>Book Now</button>}
+    </div>
 </div>
-</Element>
 
-<Element name = "prices"> 
-<div class="hfsd">Select Options</div>
-<div className={`boxse ${selectedTrek === 'trekWithTransfer' ? 'active' : ''}`} id="trekWithTransfer" onClick={() => selectTrek('trekWithTransfer')}>
-                <h4 style={{marginTop: "5px"}}>Netravathi Trek with Transfers</h4>
-                <h5>View details</h5>
-                <p style={{marginLeft: "75px"}} >
-                    <span><s>4999</s><br /></span>
-                    <span>INR 3499</span>
-                </p>
-                <div className="row" onClick={handleOpenModal}>
-                    {selectedTrek === 'trekWithTransfer' && <button>Book Now</button>}
-                </div>
-            </div>
+<div className={`boxse ${selectedTrek === 'trekWithoutTransfer' ? 'active' : ''}`} id="trekWithoutTransfer">
+    <input style={{    height: "45px",
+    width: "20px"}}
+        type="radio" 
+        id="trekWithoutTransferRadio" 
+        name="trekOption" 
+        value="trekWithoutTransfer" 
+        checked={selectedTrek === 'trekWithoutTransfer'}
+        onChange={() => selectTrek('trekWithoutTransfer')}
+    /> 
+    
+    <label htmlFor="trekWithoutTransferRadio" style={{marginLeft: "16px"}}>
+        <h4 style={{marginTop: "5px" }}>Netravathi Trek without Transfers</h4>
+        <h5>View details</h5>
+        <p style={{marginLeft: "75px"}}>
+            <span><s>4999</s><br /></span>
+            <span>INR 2399</span> 
+            <span id="section6"></span> 
+        </p>
+         
+    </label>
+       
+    <div className="row" onClick={handleOpenModal}>
+        {selectedTrek === 'trekWithoutTransfer' && <button>Book Now</button>}
+    </div>
+    
 
-            <div className={`boxse ${selectedTrek === 'trekWithoutTransfer' ? 'active' : ''}`} id="trekWithoutTransfer" onClick={() => selectTrek('trekWithoutTransfer')}>
-                <h4 style={{marginTop: "5px"}}>Netravathi Trek without Transfers</h4>
-                <h5>View details</h5>
-                <p style={{marginLeft: "75px"}}>
-                    <span><s>4999</s><br /></span>
-                    <span>INR 2399</span>
-                </p>
-                <div className="row" onClick={handleOpenModal}>
-                    {selectedTrek === 'trekWithoutTransfer' && <button>Book Now</button>}
-                </div>
-            
 
 
         <Modal 
@@ -593,15 +589,16 @@ and personal with nature during this journey</li>
                 >
                   Close 
                 </button>
+                
                 <button style={{marginLeft: "210px" , backgroundColor:"rgb(58,80,107)" , color :"white" , borderRadius: "5px"}} >Pay Now</button>
                 </div>
                 </Modal>
+            
       </div>
-      </Element>
-
-      <Element name = "questions"> </Element>
+  
+      
    <div>
-  <div class="hf">Frequently Asked Questions</div>
+  <div class="hf" >Frequently Asked Questions</div>
 <div class="button-container">
   <button class="buttons">All</button>
   <button class="buttons">others</button>
@@ -679,8 +676,9 @@ and personal with nature during this journey</li>
           isExpanded={isAllExpanded || isDay3Expanded}
           onToggle={() => setIsDay3Expanded((prevState) => !prevState)}
         />
+        
    </div>
-
+   <span id="section7"></span>
 </div>
 
   <button id="readMoreBtn" class="btn btn-primary" style={{marginLeft: "765px"}} onClick={toggleContent}>
@@ -688,8 +686,8 @@ and personal with nature during this journey</li>
   </button> 
   </div>   
 
-  <Element name = "reviews"> 
-  <div class="sidessssss">Reviews</div>
+
+  <div class="sidessssss" >Reviews</div>
 <div class="boxt-container">
     <div class="boxt">
         <img src="./Assets/logo8t.jpg" alt="logo"/>
@@ -741,10 +739,10 @@ and personal with nature during this journey</li>
             <h3 class="rate" style={{    marginLeft: "8px"}}>Jul & sons co..</h3>
     </div>
 </div>
-</Element>
 
-<Element name = "othertreks"> </Element>
-<div class="sidess">You Might also like</div>
+
+
+<div class="sidess" id="section8">You Might also like</div>
     <div class="cards-container">
         
          <div class="cards">
@@ -851,7 +849,7 @@ and personal with nature during this journey</li>
   <div></div>
   <div></div>
 </div>
-
+ 
 
     )
 }
